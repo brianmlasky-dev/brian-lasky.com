@@ -29,7 +29,7 @@ export default function ContactForm() {
 
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL,
+        process.env.NEXT_PUBLIC_API_URL!,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
