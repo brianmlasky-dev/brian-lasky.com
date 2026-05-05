@@ -18,3 +18,11 @@ resource "aws_route53_record" "www_cname" {
   ttl     = 300
   records = ["cname.vercel-dns.com"]
 }
+
+resource "aws_route53_record" "spf" {
+  zone_id = data.aws_route53_zone.primary.zone_id
+  name    = var.domain_name
+  type    = "TXT"
+  ttl     = 300
+  records = ["v=spf1 include:amazonses.com ~all"]
+}
