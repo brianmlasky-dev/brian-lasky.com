@@ -9,6 +9,7 @@ terraform/.env
 terraform/.env.local
 
 # Next.js
+tsconfig.tsbuildinfo
 .next/
 out/
 node_modules/
