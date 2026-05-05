@@ -1,0 +1,15 @@
+{
+  "name": "brian-lasky.com",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "1.15.1"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
+  },
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3000],
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  }
+}
