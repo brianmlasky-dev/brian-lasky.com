@@ -10,6 +10,7 @@ env:
   AWS_REGION: us-east-1
   TF_VERSION: 1.5.7
   NODE_VERSION: 18
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   # ── Job 1: Build & package Lambda ─────────────────────────────────────────
