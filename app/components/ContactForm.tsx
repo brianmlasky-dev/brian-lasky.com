@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from 'react';
 
-// ── limits must mirror lambda-function/index.js LIMITS ──────────────────────
 const LIMITS = {
   name:    { min: 1,  max: 100  },
   email:   { min: 5,  max: 254  },
   message: { min: 1,  max: 5000 },
 } as const;
 
-// Generic user-facing message — never forward raw HTTP/network errors
 const GENERIC_ERROR = "Something went wrong. Please try again or email me directly.";
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -33,6 +31,32 @@ function clientValidate(data: FormData): string | null {
   return null;
 }
 
+function Spinner() {
+  return (
+    <svg
+      className="animate-spin h-4 w-4 text-white"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+      />
+    </svg>
+  );
+}
+
 export default function ContactForm() {
   const [isClient, setIsClient] = useState(false);
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
@@ -50,7 +74,6 @@ export default function ContactForm() {
     e.preventDefault();
     setErrorMsg('');
 
-    // Client-side validation before touching the network
     const validationError = clientValidate(formData);
     if (validationError) {
       setStatus('error');
@@ -68,12 +91,10 @@ export default function ContactForm() {
       });
 
       if (!response.ok) {
-        // Log status for debugging; show generic message to user
         console.error('Contact form HTTP error:', response.status);
         throw new Error('non-2xx');
       }
 
-      console.log('Contact form submitted successfully');
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
@@ -84,109 +105,100 @@ export default function ContactForm() {
     }
   };
 
-  // ── skeleton (prevents hydration mismatch) ─────────────────────────────────
   if (!isClient) {
     return (
-      <form className="max-w-lg mx-auto p-6 border rounded-lg" aria-busy="true">
-        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-        <div className="animate-pulse space-y-4">
-          <div className="h-10 bg-gray-300 rounded" />
-          <div className="h-10 bg-gray-300 rounded" />
-          <div className="h-24 bg-gray-300 rounded" />
+      <section id="contact" className="py-20 px-4 bg-gray-900">
+        <div className="max-w-2xl mx-auto">
+          <div className="h-8 bg-gray-700 rounded w-48 mb-8 animate-pulse mx-auto" />
+          <div className="space-y-4">
+            <div className="h-10 bg-gray-700 rounded animate-pulse" />
+            <div className="h-10 bg-gray-700 rounded animate-pulse" />
+            <div className="h-32 bg-gray-700 rounded animate-pulse" />
+            <div className="h-10 bg-gray-700 rounded animate-pulse" />
+          </div>
         </div>
-      </form>
+      </section>
     );
   }
 
-  const isLoading = status === 'loading';
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-6 bg-gray-900 border border-gray-700 rounded-lg"
-      noValidate
-    >
-      <h2 className="text-2xl font-bold mb-4 text-white">Get in Touch</h2>
+    <section id="contact" className="py-20 px-4 bg-gray-900">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          Get In Touch
+        </h2>
 
-      {/* Name */}
-      <div className="mb-4">
-        <label htmlFor="cf-name" className="block text-sm font-medium mb-1 text-gray-100">
-          Name
-        </label>
-        <input
-          id="cf-name"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          maxLength={LIMITS.name.max}
-          disabled={isLoading}
-          placeholder="Your name"
-          className="w-full px-3 py-2 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        {status === 'success' && (
+          <div className="mb-4 p-4 bg-green-800 text-green-100 rounded">
+            Message sent! I&apos;ll get back to you soon.
+          </div>
+        )}
+
+        {status === 'error' && errorMsg && (
+          <div className="mb-4 p-4 bg-red-800 text-red-100 rounded">
+            {errorMsg}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+          <div>
+            <label htmlFor="name" className="block text-gray-300 mb-1">
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              maxLength={LIMITS.name.max}
+              className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-gray-300 mb-1">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              maxLength={LIMITS.email.max}
+              className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-gray-300 mb-1">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={6}
+              value={formData.message}
+              onChange={handleChange}
+              required
+              maxLength={LIMITS.message.max}
+              className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center gap-2"
+          >
+            {status === 'loading' && <Spinner />}
+            {status === 'loading' ? 'Sending…' : 'Send Message'}
+          </button>
+        </form>
       </div>
-
-      {/* Email */}
-      <div className="mb-4">
-        <label htmlFor="cf-email" className="block text-sm font-medium mb-1 text-gray-100">
-          Email
-        </label>
-        <input
-          id="cf-email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          maxLength={LIMITS.email.max}
-          disabled={isLoading}
-          placeholder="your@email.com"
-          className="w-full px-3 py-2 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-
-      {/* Message */}
-      <div className="mb-4">
-        <label htmlFor="cf-message" className="block text-sm font-medium mb-1 text-gray-100">
-          Message
-        </label>
-        <textarea
-          id="cf-message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          maxLength={LIMITS.message.max}
-          rows={4}
-          disabled={isLoading}
-          placeholder="Your message..."
-          className="w-full px-3 py-2 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-        />
-        <p className="text-xs text-gray-500 mt-1 text-right">
-          {formData.message.length} / {LIMITS.message.max}
-        </p>
-      </div>
-
-      {/* Status messages */}
-      {status === 'success' && (
-        <p role="status" className="text-green-400 mb-4">
-          ✓ Message sent! I&apos;ll get back to you soon.
-        </p>
-      )}
-      {status === 'error' && (
-        <p role="alert" className="text-red-400 mb-4">
-          {errorMsg}
-        </p>
-      )}
-
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 disabled:opacity-50"
-      >
-        {isLoading ? 'Sending…' : 'Send Message'}
-      </button>
-    </form>
+    </section>
   );
 }
