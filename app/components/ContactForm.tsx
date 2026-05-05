@@ -29,7 +29,7 @@ export default function ContactForm() {
 
     try {
       const response = await fetch(
-        'https://4wuinyvkr0.execute-api.us-east-1.amazonaws.com/prod/contact',
+        process.env.NEXT_PUBLIC_API_URL,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
