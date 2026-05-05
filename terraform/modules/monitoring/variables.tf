@@ -17,3 +17,14 @@ variable "lambda_function_name" {
   description = "Lambda function name to monitor for errors"
   type        = string
 }
+
+variable "api_gateway_id" {
+  description = "API Gateway ID to monitor for 4xx and 5xx errors"
+  type        = string
+}
+
+variable "api_gateway_stage" {
+  description = "API Gateway stage name to monitor"
+  type        = string
+  default     = "$default"
+}
