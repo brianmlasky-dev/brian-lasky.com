@@ -40,3 +40,11 @@ module "monitoring" {
   alarm_name           = "contact-form-lambda-errors"
   lambda_function_name = module.lambda.function_name
 }
+
+module "iam" {
+  source = "./modules/iam"
+
+  iam_user_name          = "portfolio-dev"
+  route53_zone_id        = "Z035160310JHLSQI8L6CY"
+  terraform_state_bucket = "brian-lasky-terraform-state"
+}
