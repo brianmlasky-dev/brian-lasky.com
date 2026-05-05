@@ -19,7 +19,7 @@ variable "lambda_function_name" {
 variable "lambda_zip_path" {
   description = "Path to the Lambda deployment zip"
   type        = string
-  default     = "../lambda/portfolio-contact-form.zip"
+  default     = "../lambda-function/function.zip"
 }
 
 variable "ses_from_email" {

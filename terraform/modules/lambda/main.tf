@@ -46,13 +46,14 @@ resource "aws_iam_role_policy" "lambda_policy" {
 }
 
 resource "aws_lambda_function" "contact_form" {
-  function_name = var.function_name
-  filename      = var.lambda_zip_path
-  role          = aws_iam_role.lambda_exec.arn
-  handler       = "index.handler"
-  runtime       = "nodejs18.x"
-  memory_size   = var.memory_size
-  timeout       = var.timeout
+  function_name    = var.function_name
+  filename         = var.lambda_zip_path
+  source_code_hash = filebase64sha256(var.lambda_zip_path)
+  role             = aws_iam_role.lambda_exec.arn
+  handler          = "index.handler"
+  runtime          = "nodejs18.x"
+  memory_size      = var.memory_size
+  timeout          = var.timeout
 
   environment {
     variables = {
@@ -60,10 +61,6 @@ resource "aws_lambda_function" "contact_form" {
       SES_TO_EMAIL   = var.ses_to_email
       ENVIRONMENT    = var.environment
     }
-  }
-
-  lifecycle {
-    ignore_changes = [filename]
   }
 }
 
