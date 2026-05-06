@@ -3,45 +3,97 @@
 export default function ProjectsSection() {
   const projects = [
     {
-      title: 'Portfolio Website',
-      description: 'Serverless portfolio built with Next.js, deployed via AWS Lambda and API Gateway with SES email integration.',
-      tech: ['Next.js', 'TypeScript', 'AWS Lambda', 'API Gateway', 'SES', 'Tailwind CSS'],
-      link: 'https://github.com/brianmlasky-dev/brian-lasky.com',
+      title: 'Production Portfolio Platform',
+      status: 'Live',
+      description:
+        'This site — a fully production-grade system provisioned entirely with Terraform. AWS infrastructure includes Route53 DNS, SES (production access, 50K msg/day), Lambda + API Gateway for the contact form, CloudWatch alarms, and SNS alerting. Deployed via GitHub Actions with OIDC authentication. Zero manual console work.',
+      tech: [
+        'Next.js',
+        'TypeScript',
+        'Terraform',
+        'AWS Lambda',
+        'API Gateway',
+        'SES',
+        'Route53',
+        'CloudWatch',
+        'GitHub Actions',
+        'OIDC',
+      ],
+      link: 'https://github.com/brianmlasky/brian-lasky.com',
+      linkLabel: 'View Repository →',
     },
     {
       title: 'Multi-Cloud DR Platform',
-      description: 'Comprehensive Disaster Recovery platform supporting AWS and Google Cloud with automated failover and monitoring.',
-      tech: ['AWS', 'Google Cloud', 'Terraform', 'Python', 'CloudWatch', 'Monitoring'],
+      status: 'In Development',
+      description:
+        'Disaster recovery architecture spanning AWS and GCP. Designing cross-cloud replication strategy, automated failover logic, and observability tooling. Documenting architecture decisions and runbooks as the build progresses.',
+      tech: [
+        'AWS',
+        'Google Cloud',
+        'Terraform',
+        'Python',
+        'CloudWatch',
+        'Cloud Monitoring',
+      ],
       link: '#',
+      linkLabel: 'In Progress',
     },
     {
-      title: 'CI/CD Automation Framework',
-      description: 'Reusable GitHub Actions workflows with OIDC-based cloud authentication for automated infrastructure and deployments.',
-      tech: ['GitHub Actions', 'OIDC', 'Terraform', 'Bash', 'AWS', 'Automation'],
-      link: '#',
+      title: 'CI/CD Automation Pipeline',
+      status: 'Live',
+      description:
+        'GitHub Actions workflow powering this portfolio. Uses OIDC federation for keyless AWS authentication — no long-lived credentials stored in GitHub. Runs terraform fmt, validate, plan, and apply on merge to main. Structured for reuse across projects.',
+      tech: [
+        'GitHub Actions',
+        'OIDC',
+        'Terraform',
+        'AWS IAM',
+        'Bash',
+      ],
+      link: 'https://github.com/brianmlasky/brian-lasky.com/blob/main/.github/workflows/deploy.yml',
+      linkLabel: 'View Workflow →',
     },
   ];
+
+  const statusStyles: Record<string, string> = {
+    Live: 'bg-green-900 text-green-400 border border-green-700',
+    'In Development': 'bg-yellow-900 text-yellow-400 border border-yellow-700',
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-900 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-white mb-4 text-center">Featured Projects</h2>
+        <h2 className="text-4xl font-bold text-white mb-4 text-center">
+          Featured Projects
+        </h2>
         <p className="text-gray-400 text-center mb-12">
-          Real-world cloud infrastructure and automation solutions
+          Production infrastructure and automation — every component version-controlled and documented
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
-            <a
+            <div
               key={idx}
-              href={project.link}
-              className="group bg-gray-800 rounded-lg border border-gray-700 p-6 hover:border-blue-500 transition-colors"
+              className="group bg-gray-800 rounded-lg border border-gray-700 p-6 hover:border-blue-500 transition-colors flex flex-col"
             >
+              {/* Status Badge */}
+              <div className="mb-3">
+                <span
+                  className={`text-xs font-semibold px-2 py-1 rounded ${statusStyles[project.status]}`}
+                >
+                  {project.status}
+                </span>
+              </div>
+
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
+
+              <p className="text-gray-400 text-sm mb-4 flex-grow">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((t, i) => (
                   <span
                     key={i}
@@ -51,10 +103,22 @@ export default function ProjectsSection() {
                   </span>
                 ))}
               </div>
-              <div className="mt-4 text-blue-400 group-hover:translate-x-2 transition-transform">
-                View Project →
-              </div>
-            </a>
+
+              {project.link !== '#' ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto text-blue-400 hover:translate-x-2 transition-transform inline-block"
+                >
+                  {project.linkLabel}
+                </a>
+              ) : (
+                <span className="mt-auto text-gray-500 text-sm">
+                  {project.linkLabel}
+                </span>
+              )}
+            </div>
           ))}
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Cloud Architecture <span className="text-blue-400">at Scale</span>
+          Brian Lasky <span className="text-blue-400">Cloud Infrastructure</span>
         </h1>
 
         {/* Tagline */}
@@ -27,7 +27,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          AWS expertise. Infrastructure as code. Full-stack solutions.
+          AWS · Terraform · GitHub Actions · IaC
         </p>
 
         {/* Description */}
@@ -36,8 +36,9 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          I design and deploy secure, scalable cloud infrastructure using Terraform, AWS, and modern DevOps practices. 
-          Let's build something remarkable together.
+          Cloud infrastructure engineer with AWS Solutions Architect and Google Professional 
+          Cloud Architect certifications. I build production-grade systems with Terraform, 
+          serverless architecture, and automated CI/CD pipelines.
         </p>
 
         {/* CTA Buttons */}
@@ -47,16 +48,16 @@ export default function HeroSection() {
           }`}
         >
           <a
-            href="#contact"
+            href="#projects"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
           >
-            Get in Touch
+            View My Work
           </a>
           <a
-            href="#work"
+            href="#contact"
             className="px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 font-semibold rounded-lg transition-colors"
           >
-            View Work
+            Get in Touch
           </a>
         </div>
 
