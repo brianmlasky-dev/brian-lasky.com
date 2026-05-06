@@ -14,3 +14,15 @@ variable "terraform_state_bucket" {
   type        = string
   default     = "brian-lasky-terraform-state"
 }
+
+variable "github_org" {
+  description = "GitHub username or org for OIDC trust policy"
+  type        = string
+  default     = "brianmlasky"
+}
+
+variable "github_repo" {
+  description = "GitHub repository name for OIDC trust policy"
+  type        = string
+  default     = "brian-lasky.com"
+}
