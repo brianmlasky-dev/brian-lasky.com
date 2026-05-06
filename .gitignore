@@ -30,3 +30,6 @@ dist/
 Thumbs.db
 awscliv2.zip
 .vercel
+function.zip
+lambda-function/index.js.bak
+lambda-function/function.zip
