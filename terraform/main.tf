@@ -49,3 +49,10 @@ module "iam" {
   route53_zone_id        = "Z035160310JHLSQI8L6CY"
   terraform_state_bucket = "brian-lasky-terraform-state"
 }
+
+module "ses" {
+  source = "./modules/ses"
+
+  domain_name        = var.domain_name
+  notification_email = var.ses_to_email
+}
