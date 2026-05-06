@@ -51,7 +51,7 @@ resource "aws_lambda_function" "contact_form" {
   source_code_hash = filebase64sha256(var.lambda_zip_path)
   role             = aws_iam_role.lambda_exec.arn
   handler          = "index.handler"
-  runtime          = "nodejs18.x"
+  runtime          = "nodejs22.x"
   memory_size      = var.memory_size
   timeout          = var.timeout
 
