@@ -24,19 +24,21 @@ export default function ProjectsSection() {
     },
     {
       title: 'Multi-Cloud DR Platform',
-      status: 'In Development',
+      status: 'Live — Simulation Mode',
       description:
-        'Disaster recovery architecture spanning AWS and GCP. Designing cross-cloud replication strategy, automated failover logic, and observability tooling. Documenting architecture decisions and runbooks as the build progresses.',
+        'Disaster recovery architecture spanning AWS ECS Fargate and GCP Cloud Run. Achieves RTO of 0s and RPO of 1s via automated DNS failover, cross-cloud database replication (RDS → S3 → GCS → Cloud SQL), and OIDC keyless authentication. Provisioned with Terraform 1.7.0. Infrastructure is fully deployed in simulation mode — a cost-conscious approach that preserves the full failover capability without incurring ~$180/month production infrastructure costs.',
       tech: [
-        'AWS',
-        'Google Cloud',
+        'AWS ECS Fargate',
+        'GCP Cloud Run',
         'Terraform',
-        'Python',
-        'CloudWatch',
-        'Cloud Monitoring',
+        'PostgreSQL',
+        'Route53',
+        'Cloud SQL',
+        'GitHub Actions',
+        'OIDC',
       ],
-      link: '#',
-      linkLabel: 'In Progress',
+      link: 'https://github.com/brianmlasky/multi-cloud-dr-platform',
+      linkLabel: 'View Repository →',
     },
     {
       title: 'CI/CD Automation Pipeline',
@@ -57,6 +59,7 @@ export default function ProjectsSection() {
 
   const statusStyles: Record<string, string> = {
     Live: 'bg-green-900 text-green-400 border border-green-700',
+    'Live — Simulation Mode': 'bg-blue-900 text-blue-400 border border-blue-700',
     'In Development': 'bg-yellow-900 text-yellow-400 border border-yellow-700',
   };
 
