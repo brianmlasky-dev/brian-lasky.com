@@ -39,7 +39,7 @@ module "monitoring" {
   alert_email          = var.ses_to_email
   alarm_name           = "contact-form-lambda-errors"
   lambda_function_name = module.lambda.function_name
-  api_gateway_id       = module.api_gateway.api_id  # ADD THIS LINE
+  api_gateway_id       = module.api_gateway.api_id # ADD THIS LINE
 }
 
 module "iam" {
