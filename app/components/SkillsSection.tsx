@@ -5,15 +5,15 @@ export default function SkillsSection() {
     {
       title: '☁️ Cloud Platforms',
       skills: [
-        'AWS — Lambda, API Gateway, SES, Route53, IAM, S3, CloudWatch, SNS',
-        'Google Cloud — Compute, Cloud Run, IAM',
+        'AWS — ECS Fargate, Lambda, RDS PostgreSQL, DynamoDB, Route53, S3, API Gateway, SES, CloudWatch, SNS, IAM',
+        'Google Cloud — Cloud Run, GKE Autopilot, Cloud SQL, GCS, Pub/Sub, Cloud Monitoring, Secret Manager, IAM',
         'Vercel — Next.js deployment and edge config',
       ],
     },
     {
       title: '🏗️ Infrastructure as Code',
       skills: [
-        'Terraform 1.5.7 — modules, workspaces, remote state',
+        'Terraform 1.7 — modules, workspaces, remote state',
         'HCL — variables, locals, outputs, data sources',
         'S3 + DynamoDB state backend with locking',
         'Terraform Cloud / CLI-driven workflows',
@@ -50,8 +50,9 @@ export default function SkillsSection() {
       title: '🛠️ Languages & Tooling',
       skills: [
         'TypeScript / Next.js — production frontend',
-        'Python — Lambda function development',
-        'Node.js — serverless runtime',
+        'Python (Flask) — API and Lambda development',
+        'Bash — deployment and failover scripting',
+        'Docker — containerized service packaging',
         'Git — branching, PRs, version control',
       ],
     },
