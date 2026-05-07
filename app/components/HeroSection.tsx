@@ -36,7 +36,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Cloud infrastructure engineer with AWS Solutions Architect and Google Professional 
+          Cloud Infrastructure Engineer with AWS Solutions Architect and Google Professional 
           Cloud Architect certifications. I build production-grade systems with Terraform, 
           serverless architecture, and automated CI/CD pipelines.
         </p>
