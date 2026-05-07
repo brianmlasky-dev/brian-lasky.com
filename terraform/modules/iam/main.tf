@@ -83,3 +83,39 @@ resource "aws_iam_role" "github_actions_deploy" {
     ManagedBy = "terraform"
   }
 }
+
+data "aws_iam_policy_document" "iam_self_inspect" {
+  statement {
+    sid    = "IAMSelfInspect"
+    effect = "Allow"
+    actions = [
+      "iam:GetUser",
+      "iam:ListOpenIDConnectProviders",
+      "iam:GetOpenIDConnectProvider"
+    ]
+    resources = ["*"]
+  }
+}
+
+data "aws_iam_policy_document" "ses_notification_read" {
+  statement {
+    sid    = "SESNotificationRead"
+    effect = "Allow"
+    actions = [
+      "ses:GetIdentityNotificationAttributes"
+    ]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_user_policy" "iam_self_inspect" {
+  name   = "iam-self-inspect"
+  user   = data.aws_iam_user.portfolio_dev.user_name
+  policy = data.aws_iam_policy_document.iam_self_inspect.json
+}
+
+resource "aws_iam_user_policy" "ses_notification_read" {
+  name   = "ses-notification-read"
+  user   = data.aws_iam_user.portfolio_dev.user_name
+  policy = data.aws_iam_policy_document.ses_notification_read.json
+}
