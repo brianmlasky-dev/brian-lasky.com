@@ -78,7 +78,7 @@ export default function SkillsSection() {
       name: 'Professional Cloud Architect',
       issued: 'Issued Apr 2026 · Expires Apr 2028',
       credentialId: '009a2dd92d044676b1eb1246d3ff36a0',
-      verifyUrl: 'https://google.accredible.com/009a2dd92d044676b1eb1246d3ff36a0',
+      verifyUrl: 'https://www.credly.com/badges/efa6ff9f-1609-43c8-963a-9d9924a24423',
       status: 'Active',
     },
     {
