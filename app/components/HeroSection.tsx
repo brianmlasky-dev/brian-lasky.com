@@ -18,7 +18,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Brian Lasky <span className="text-blue-400">Cloud Infrastructure</span>
+          Brian Lasky <span className="text-blue-400">Principal Cloud Architect</span>
         </h1>
 
         {/* Tagline */}
@@ -27,7 +27,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          AWS · Terraform · GitHub Actions · IaC
+          Agentic AI Infrastructure · Fiscal SecOps · Multi-Cloud DR
         </p>
 
         {/* Description */}
@@ -36,9 +36,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Cloud Infrastructure Engineer with AWS Solutions Architect and Google Professional 
-          Cloud Architect certifications. I build production-grade systems with Terraform, 
-          serverless architecture, and automated CI/CD pipelines.
+          I transform uncontrolled agentic autonomy into audit-ready, policy-driven financial clearing systems. Specializing in high-stakes infrastructure that balances AI innovation with rigorous operational reliability.
         </p>
 
         {/* CTA Buttons */}
@@ -48,22 +46,27 @@ export default function HeroSection() {
           }`}
         >
           <a
-            href="#projects"
+            href="https://github.com/brianmlasky/resilience-control-plane"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
           >
-            View My Work
+            View Resilience Control Plane
           </a>
           <a
             href="#contact"
             className="px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 font-semibold rounded-lg transition-colors"
           >
-            Get in Touch
+            Read Traceability Matrix
           </a>
         </div>
 
+        {/* Infrastructure Footnote */}
+        <p className="mt-8 text-sm text-gray-500 italic">
+          Infrastructure-as-Code: Provisioned via Terraform and governed by GitHub Actions.
+        </p>
+
         {/* Scroll Indicator */}
         <div
-          className={`mt-20 animate-bounce transition-all duration-1000 delay-700 ${
+          className={`mt-12 animate-bounce transition-all duration-1000 delay-700 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
         >
