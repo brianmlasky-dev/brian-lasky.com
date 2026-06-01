@@ -7,3 +7,8 @@ variable "vercel_a_record_ip" {
   description = "Vercel IP address for the apex A record"
   type        = string
 }
+
+variable "ses_dkim_tokens" {
+  type    = list(string)
+  default = []
+}
