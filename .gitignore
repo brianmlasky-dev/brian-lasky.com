@@ -7,11 +7,14 @@ terraform/*.tfvars
 !terraform/terraform.tfvars.example
 terraform/.env
 terraform/.env.local
+*.tfplan
 
 # Next.js
-tsconfig.tsbuildinfo
 .next/
 out/
+tsconfig.tsbuildinfo
+
+# Dependencies
 node_modules/
 dist/
 
@@ -24,12 +27,15 @@ dist/
 # Environment
 .env.local
 .env.*.local
+.env*.local
+.vercel
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Misc/Artifacts
 awscliv2.zip
-.vercel
 function.zip
 lambda-function/index.js.bak
 lambda-function/function.zip
