@@ -1,7 +1,17 @@
 import { Shield, Server, Bot } from 'lucide-react';
 
-export function ProjectCard({ title, desc, challenge, solution, impact, tags, iconType }) {
-  const icons = {
+interface ProjectCardProps {
+  title: string;
+  desc: string;
+  challenge: string;
+  solution: string;
+  impact: string;
+  tags: string[];
+  iconType: 'shield' | 'server' | 'bot';
+}
+
+export function ProjectCard({ title, desc, challenge, solution, impact, tags, iconType }: ProjectCardProps) {
+  const icons: { [key: string]: JSX.Element } = {
     shield: <Shield className="w-8 h-8 text-[#ff9900] mb-4" />,
     server: <Server className="w-8 h-8 text-[#ff9900] mb-4" />,
     bot: <Bot className="w-8 h-8 text-[#ff9900] mb-4" />
