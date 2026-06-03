@@ -1,4 +1,5 @@
 import { Shield, Server, Bot } from 'lucide-react';
+import { ReactNode } from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -11,7 +12,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ title, desc, challenge, solution, impact, tags, iconType }: ProjectCardProps) {
-  const icons: { [key: string]: JSX.Element } = {
+  // Using Record<string, ReactNode> is safer and avoids the JSX namespace issue
+  const icons: Record<string, ReactNode> = {
     shield: <Shield className="w-8 h-8 text-[#ff9900] mb-4" />,
     server: <Server className="w-8 h-8 text-[#ff9900] mb-4" />,
     bot: <Bot className="w-8 h-8 text-[#ff9900] mb-4" />
