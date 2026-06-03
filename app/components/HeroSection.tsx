@@ -18,7 +18,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Brian Lasky <span className="text-blue-400">Principal Cloud Architect</span>
+          Brian Lasky <span className="text-blue-400">Cloud Architect | Senior SRE</span>
         </h1>
 
         {/* Tagline */}
@@ -47,12 +47,16 @@ export default function HeroSection() {
         >
           <a
             href="https://github.com/brianmlasky/resilience-control-plane"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
           >
             View Resilience Control Plane
           </a>
           <a
-            href="#contact"
+            href="https://github.com/brianmlasky/resilience-control-plane/blob/main/docs/adr/0000-traceability-matrix.md"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 font-semibold rounded-lg transition-colors"
           >
             Read Traceability Matrix
