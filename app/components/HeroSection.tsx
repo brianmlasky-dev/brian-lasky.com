@@ -46,26 +46,26 @@ export default function HeroSection() {
           }`}
         >
           <a
-            href="https://github.com/brianmlasky/resilience-control-plane"
+            href="https://github.com/brianmlasky/serverless-agentic-governance-controller"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
           >
-            View Resilience Control Plane
+            View Governance Controller
           </a>
           <a
-            href="https://github.com/brianmlasky/resilience-control-plane/blob/main/docs/adr/0000-traceability-matrix.md"
+            href="https://github.com/brianmlasky/serverless-agentic-governance-controller"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 font-semibold rounded-lg transition-colors"
           >
-            Read Traceability Matrix
+            Read Technical Specs
           </a>
         </div>
 
         {/* Infrastructure Footnote */}
         <p className="mt-8 text-sm text-gray-500 italic">
-          Infrastructure-as-Code: Provisioned via Terraform and governed by GitHub Actions.
+          Policy-as-Code: Enforced via OPA Gatekeeper and governed by Fiscal SecOps.
         </p>
 
         {/* Scroll Indicator */}
