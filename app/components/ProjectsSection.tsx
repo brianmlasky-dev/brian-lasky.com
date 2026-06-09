@@ -7,6 +7,7 @@ export default function ProjectsSection() {
         <h2 className="text-3xl font-bold text-white tracking-tight mb-10">Flagship Architectural Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Agentic Governance Controller is currently first in the DOM order */}
           <ProjectCard 
             iconType="bot"
             title="Agentic Governance Controller"
