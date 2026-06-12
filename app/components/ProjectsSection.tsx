@@ -4,18 +4,18 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 bg-[#0b0f19]">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-white tracking-tight mb-10">Flagship Architectural Projects</h2>
+        <h2 className="text-3xl font-bold text-white tracking-tight mb-10">Flagship Engineering Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Agentic Governance Controller is currently first in the DOM order */}
           <ProjectCard 
             iconType="bot"
             title="Agentic Governance Controller"
-            desc="Fiscal SecOps Middleware for Autonomous AI"
-            tags={["Kubernetes", "Atomic State", "Sidecar"]}
-            challenge="Autonomous AI lacks native fiscal circuit breakers, risking 'token runaway'."
-            solution="Architected a proxy enforcing fail-closed budget gating via atomic state."
-            impact="Eliminated race conditions, securing $250k+ in API budget exposure."
+            desc="Zero-Trust Fiscal SecOps for Autonomous AI"
+            tags={["GCP WIF", "Kubernetes", "Terraform"]}
+            challenge="Ungoverned AI agents pose catastrophic financial risks and rely on vulnerable static credentials."
+            solution="Architected an ambient identity control plane bridging GKE and IAM, eradicating static secrets."
+            impact="Mathematically bounded compute footprint to $0.00 and secured $250k+ in API budget exposure."
           />
 
           <ProjectCard 

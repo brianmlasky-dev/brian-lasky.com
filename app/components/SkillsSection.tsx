@@ -23,7 +23,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="py-20 bg-gray-800 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-white mb-4 text-center">Architectural Capabilities</h2>
+        <h2 className="text-4xl font-bold text-white mb-4 text-center">Engineering Capabilities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {skillCategories.map((cat, idx) => (
             // Added unique key based on index

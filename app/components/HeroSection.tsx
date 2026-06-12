@@ -18,7 +18,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Brian Lasky <span className="text-blue-400">Cloud Architect | Senior SRE</span>
+          Brian Lasky <span className="text-blue-400">Senior Platform Engineer | SRE</span>
         </h1>
 
         {/* Tagline */}
@@ -36,7 +36,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          I transform uncontrolled agentic autonomy into audit-ready, policy-driven financial clearing systems. Specializing in high-stakes infrastructure that balances AI innovation with rigorous operational reliability.
+          I build and deploy audit-ready, policy-driven infrastructure to secure autonomous agentic workloads. Specializing in high-stakes infrastructure that balances AI innovation with rigorous operational reliability.
         </p>
 
         {/* CTA Buttons */}
