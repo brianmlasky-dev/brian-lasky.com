@@ -54,7 +54,7 @@ export default function HeroSection() {
             View Governance Controller
           </a>
           <a
-            href="https://github.com/brianmlasky/serverless-agentic-governance-controller"
+            href="https://github.com/brianmlasky/serverless-agentic-governance-controller/tree/main/docs"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 font-semibold rounded-lg transition-colors"
