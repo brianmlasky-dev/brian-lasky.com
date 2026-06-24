@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,17 +19,22 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Brian Lasky <span className="text-blue-400">Senior Platform Engineer | SRE</span>
+          Brian Lasky <span className="text-blue-400">Principal AI Infrastructure Architect</span>
         </h1>
 
-        {/* Tagline */}
-        <p
-          className={`text-xl md:text-2xl text-gray-300 mb-8 transition-all duration-1000 delay-200 ${
+        {/* Tagline & Geo-Signaling */}
+        <div
+          className={`mb-8 transition-all duration-1000 delay-200 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Agentic AI Infrastructure · Fiscal SecOps · Multi-Cloud DR
-        </p>
+          <p className="text-xl md:text-2xl text-gray-300 mb-2">
+            Agentic AI Infrastructure · Fiscal SecOps · Multi-Cloud DR
+          </p>
+          <p className="text-sm font-medium text-blue-400/80 uppercase tracking-wider">
+            Open to Remote | San Jose, CA · Ridgefield, CT · Veneta, OR · Walton, KY
+          </p>
+        </div>
 
         {/* Description */}
         <p
@@ -36,7 +42,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          I build and deploy audit-ready, policy-driven infrastructure to secure autonomous agentic workloads. Specializing in high-stakes infrastructure that balances AI innovation with rigorous operational reliability.
+          I architect fail-closed, policy-driven control planes to secure autonomous agentic workloads. I specialize in mitigating the financial and operational risks of AI at enterprise scale.
         </p>
 
         {/* CTA Buttons */}
@@ -45,14 +51,12 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <a
-            href="https://github.com/brianmlasky/serverless-agentic-governance-controller"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/case-studies/sagc"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
           >
             View Governance Controller
-          </a>
+          </Link>
           <a
             href="https://github.com/brianmlasky/serverless-agentic-governance-controller"
             target="_blank"
@@ -64,30 +68,9 @@ export default function HeroSection() {
         </div>
 
         {/* Infrastructure Footnote */}
-        <p className="mt-8 text-sm text-gray-500 italic">
+        <p className={`mt-8 text-sm text-gray-500 italic transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
           Policy-as-Code: Enforced via OPA Gatekeeper and governed by Fiscal SecOps.
         </p>
-
-        {/* Scroll Indicator */}
-        <div
-          className={`mt-12 animate-bounce transition-all duration-1000 delay-700 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <svg
-            className="w-6 h-6 mx-auto text-blue-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
       </div>
     </section>
   );

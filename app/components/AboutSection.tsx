@@ -26,7 +26,7 @@ export default function AboutSection() {
             My approach to platform engineering is fundamentally different from traditional software engineering. It is rooted in 17+ years of physical production operations and over 125 regulatory-grade incident investigations. I spent my early career managing safety-critical, high-pressure equipment where downtime wasn't just an inconvenience—it was a critical failure.
           </p>
           <p>
-            Today, I bring that exact same industrial incident command discipline to distributed systems. I specialize in translating strict reliability requirements into robust, automated infrastructure. I don’t just blueprint systems; I build, deploy, and maintain the code that keeps them running safely at scale. 
+            Today, I bring that exact same industrial incident command discipline to distributed systems. I specialize in translating strict reliability requirements into robust, automated infrastructure. I don't just blueprint systems; I engineer the deterministic guardrails and 'fail-closed' policies that allow autonomous infrastructure to scale without human intervention.
           </p>
           <p>
             Whether I am decoupling business logic from governance to prevent AI "token runaway," or designing zero-trust multi-cloud failovers, my goal is to build systems that isolate blast radiuses, protect enterprise budgets, and fail safely.

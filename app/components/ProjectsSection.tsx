@@ -13,9 +13,9 @@ export default function ProjectsSection() {
             title="Agentic Governance Controller"
             desc="Zero-Trust Fiscal SecOps for Autonomous AI"
             tags={["GCP WIF", "Kubernetes", "Terraform"]}
-            challenge="Ungoverned AI agents pose catastrophic financial risks and rely on vulnerable static credentials."
+            challenge="Unconstrained AI agents expose enterprises to severe 'Denial of Wallet' risks, running up unbounded token costs while relying on vulnerable static credentials."
             solution="Architected an ambient identity control plane bridging GKE and IAM, eradicating static secrets."
-            impact="Mathematically bounded compute footprint to $0.00 and secured $250k+ in API budget exposure."
+            impact="Mathematically bounded compute footprint to $0.00 and secured $250k+ in runaway agent budget exposure."
           />
 
           <ProjectCard 

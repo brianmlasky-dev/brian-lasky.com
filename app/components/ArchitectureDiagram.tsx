@@ -5,13 +5,13 @@ export default function ArchitectureDiagram() {
     <section id="architecture" className="py-20 bg-gray-800 px-4">
       <div className="max-w-6xl mx-auto">
         
-        {/* --- SECTION 1: SERVERLESS PORTFOLIO --- */}
+        {/* --- SECTION 1: SERVERLESS AGENTIC GOVERNANCE CONTROLLER (SAGC) --- */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Architecture
           </h2>
           <p className="text-gray-400 text-lg">
-            Serverless portfolio infrastructure on AWS
+            Serverless Agentic Governance Controller (SAGC)
           </p>
         </div>
 
@@ -25,79 +25,64 @@ export default function ArchitectureDiagram() {
               <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
                 <polygon points="0 0, 10 3, 0 6" fill="#6B7280" />
               </marker>
+              <marker id="arrow-reject" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#EF4444" />
+              </marker>
             </defs>
 
             {/* Background */}
             <rect width="1000" height="400" fill="#111827" rx="8" />
 
-            {/* User/Browser */}
+            {/* AI Application / Agent */}
             <rect x="30" y="160" width="140" height="80" fill="#1E3A8A" stroke="#3B82F6" strokeWidth="2" rx="6" />
-            <text x="100" y="195" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Browser</text>
-            <text x="100" y="215" textAnchor="middle" fill="#93C5FD" fontSize="11">Next.js 16</text>
-            <text x="100" y="230" textAnchor="middle" fill="#93C5FD" fontSize="11">TypeScript</text>
+            <text x="100" y="195" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Agentic App</text>
+            <text x="100" y="215" textAnchor="middle" fill="#93C5FD" fontSize="11">Autonomous Loop</text>
+            <text x="100" y="230" textAnchor="middle" fill="#93C5FD" fontSize="11">LLM Request</text>
 
             {/* Arrow 1 */}
             <line x1="170" y1="200" x2="230" y2="200" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="200" y="190" textAnchor="middle" fill="#9CA3AF" fontSize="10">HTTPS</text>
 
-            {/* Route 53 */}
+            {/* LiteLLM Gateway */}
             <rect x="230" y="160" width="140" height="80" fill="#5B21B6" stroke="#8B5CF6" strokeWidth="2" rx="6" />
-            <text x="300" y="195" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Route 53</text>
-            <text x="300" y="215" textAnchor="middle" fill="#C4B5FD" fontSize="11">brian-lasky.com</text>
-            <text x="300" y="230" textAnchor="middle" fill="#C4B5FD" fontSize="11">DNS</text>
+            <text x="300" y="195" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">AI Gateway</text>
+            <text x="300" y="215" textAnchor="middle" fill="#C4B5FD" fontSize="11">LiteLLM Routing</text>
+            <text x="300" y="230" textAnchor="middle" fill="#C4B5FD" fontSize="11">Token Counting</text>
 
             {/* Arrow 2 */}
             <line x1="370" y1="200" x2="430" y2="200" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="400" y="190" textAnchor="middle" fill="#9CA3AF" fontSize="10">REST</text>
 
-            {/* API Gateway */}
-            <rect x="430" y="160" width="140" height="80" fill="#065F46" stroke="#10B981" strokeWidth="2" rx="6" />
-            <text x="500" y="190" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">API Gateway</text>
-            <text x="500" y="210" textAnchor="middle" fill="#6EE7B7" fontSize="11">4wuinyvkr0</text>
-            <text x="500" y="225" textAnchor="middle" fill="#6EE7B7" fontSize="11">POST /contact</text>
+            {/* OPA Gatekeeper (Fiscal Guardrail) */}
+            <rect x="430" y="160" width="140" height="80" fill="#7F1D1D" stroke="#EF4444" strokeWidth="2" rx="6" />
+            <text x="500" y="190" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">OPA Gatekeeper</text>
+            <text x="500" y="210" textAnchor="middle" fill="#FCA5A5" fontSize="11">Admission Control</text>
+            <text x="500" y="225" textAnchor="middle" fill="#FCA5A5" fontSize="11">Budget Enforcement</text>
 
-            {/* Arrow 3 */}
-            <line x1="570" y1="200" x2="630" y2="200" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="600" y="190" textAnchor="middle" fill="#9CA3AF" fontSize="10">Invoke</text>
+            {/* Reject Arrow */}
+            <line x1="500" y1="160" x2="500" y2="100" stroke="#EF4444" strokeWidth="2" markerEnd="url(#arrow-reject)" strokeDasharray="4" />
+            <text x="500" y="90" textAnchor="middle" fill="#EF4444" fontSize="12" fontWeight="bold">403 Forbidden</text>
+            <text x="500" y="105" textAnchor="middle" fill="#FCA5A5" fontSize="10">(Budget Exceeded)</text>
 
-            {/* Lambda */}
-            <rect x="630" y="160" width="140" height="80" fill="#7F1D1D" stroke="#EF4444" strokeWidth="2" rx="6" />
-            <text x="700" y="190" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Lambda</text>
-            <text x="700" y="210" textAnchor="middle" fill="#FCA5A5" fontSize="11">contact-form</text>
-            <text x="700" y="225" textAnchor="middle" fill="#FCA5A5" fontSize="11">Node.js 18.x</text>
+            {/* Arrow 3 (Allow) */}
+            <line x1="570" y1="200" x2="630" y2="200" stroke="#10B981" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="600" y="190" textAnchor="middle" fill="#10B981" fontSize="10" fontWeight="bold">Allow</text>
 
-            {/* Arrow Lambda -> SES */}
-            <line x1="700" y1="240" x2="700" y2="290" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="720" y="270" fill="#9CA3AF" fontSize="10">SendEmail</text>
+            {/* Workload Identity Federation */}
+            <rect x="630" y="160" width="140" height="80" fill="#065F46" stroke="#10B981" strokeWidth="2" rx="6" />
+            <text x="700" y="190" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Keyless Auth</text>
+            <text x="700" y="210" textAnchor="middle" fill="#6EE7B7" fontSize="11">GCP WIF</text>
+            <text x="700" y="225" textAnchor="middle" fill="#6EE7B7" fontSize="11">Ephemeral Tokens</text>
 
-            {/* SES */}
-            <rect x="630" y="290" width="140" height="80" fill="#7C2D12" stroke="#FB923C" strokeWidth="2" rx="6" />
-            <text x="700" y="325" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">SES</text>
-            <text x="700" y="345" textAnchor="middle" fill="#FED7AA" fontSize="11">noreply@</text>
-            <text x="700" y="360" textAnchor="middle" fill="#FED7AA" fontSize="11">brian-lasky.com</text>
+            {/* Arrow 4 */}
+            <line x1="770" y1="200" x2="830" y2="200" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
 
-            {/* Arrow SES -> Inbox */}
-            <line x1="770" y1="330" x2="830" y2="330" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="800" y="320" textAnchor="middle" fill="#9CA3AF" fontSize="10">SMTP</text>
+            {/* Target LLM Provider */}
+            <rect x="830" y="160" width="140" height="80" fill="#1E3A5F" stroke="#60A5FA" strokeWidth="2" rx="6" />
+            <text x="900" y="195" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">LLM Provider</text>
+            <text x="900" y="215" textAnchor="middle" fill="#93C5FD" fontSize="11">Frontier / OSS Models</text>
+            <text x="900" y="230" textAnchor="middle" fill="#93C5FD" fontSize="11">API Execution</text>
 
-            {/* Inbox */}
-            <rect x="830" y="290" width="140" height="80" fill="#1E3A5F" stroke="#60A5FA" strokeWidth="2" rx="6" />
-            <text x="900" y="325" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Inbox</text>
-            <text x="900" y="345" textAnchor="middle" fill="#93C5FD" fontSize="10">brian.lasky</text>
-            <text x="900" y="360" textAnchor="middle" fill="#93C5FD" fontSize="10">@outlook.com</text>
-
-            {/* Arrow Lambda -> CloudWatch */}
-            <line x1="770" y1="185" x2="830" y2="185" stroke="#6B7280" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="800" y="175" textAnchor="middle" fill="#9CA3AF" fontSize="10">Logs</text>
-
-            {/* CloudWatch */}
-            <rect x="830" y="145" width="140" height="80" fill="#164E63" stroke="#22D3EE" strokeWidth="2" rx="6" />
-            <text x="900" y="178" textAnchor="middle" fill="#FFFFFF" fontSize="13" fontWeight="bold">CloudWatch</text>
-            <text x="900" y="198" textAnchor="middle" fill="#A5F3FC" fontSize="11">Logs & Metrics</text>
-            <text x="900" y="213" textAnchor="middle" fill="#A5F3FC" fontSize="10">/aws/lambda/*</text>
-
-            <text x="500" y="35" textAnchor="middle" fill="#F9FAFB" fontSize="16" fontWeight="bold">AWS Serverless Architecture</text>
-            <text x="500" y="55" textAnchor="middle" fill="#6B7280" fontSize="12">brian-lasky.com Contact Form Flow</text>
+            <text x="500" y="35" textAnchor="middle" fill="#F9FAFB" fontSize="16" fontWeight="bold">Serverless Agentic Governance Controller (SAGC)</text>
+            <text x="500" y="55" textAnchor="middle" fill="#6B7280" fontSize="12">Zero-Trust Fiscal SecOps Architecture</text>
           </svg>
         </div>
 
