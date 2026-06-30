@@ -15,24 +15,24 @@ export default function HeroSection() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Main Headline */}
         <h1
-          className={`text-5xl md:text-7xl font-bold text-white mb-6 transition-all duration-1000 ${
+          className={`text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Brian Lasky <span className="text-blue-400">Principal AI Infrastructure Architect</span>
+          Brian Lasky <span className="block text-xl md:text-3xl text-blue-400 mt-2 font-medium">Platform Engineer | AI Infrastructure & Kubernetes</span>
         </h1>
 
-        {/* Tagline & Geo-Signaling */}
+        {/* Tagline & Availability */}
         <div
           className={`mb-8 transition-all duration-1000 delay-200 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <p className="text-xl md:text-2xl text-gray-300 mb-2">
-            Agentic AI Infrastructure · Fiscal SecOps · Multi-Cloud DR
+          <p className="text-lg md:text-xl text-gray-300 mb-2">
+            Kubernetes Governance · Fiscal SecOps · Multi-Cloud Resilience
           </p>
-          <p className="text-sm font-medium text-blue-400/80 uppercase tracking-wider">
-            Open to Remote | San Jose, CA · Ridgefield, CT · Veneta, OR · Walton, KY
+          <p className="text-sm font-semibold text-blue-400/80 uppercase tracking-wider bg-blue-950/40 inline-block px-4 py-1.5 rounded-full border border-blue-900/50">
+            Available Immediately for Remote Roles (US)
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default function HeroSection() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          I architect fail-closed, policy-driven control planes to secure autonomous agentic workloads. I specialize in mitigating the financial and operational risks of AI at enterprise scale.
+          I engineer fail-closed control planes and policy-driven infrastructure on Kubernetes. I specialize in building deterministic guardrails that protect enterprise budgets and secure autonomous AI workloads at production scale.
         </p>
 
         {/* CTA Buttons */}
@@ -69,7 +69,7 @@ export default function HeroSection() {
 
         {/* Infrastructure Footnote */}
         <p className={`mt-8 text-sm text-gray-500 italic transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-          Policy-as-Code: Enforced via OPA Gatekeeper and governed by Fiscal SecOps.
+          Infrastructure-as-Code: Managed via Terraform and governed through Kubernetes admission controls.
         </p>
       </div>
     </section>

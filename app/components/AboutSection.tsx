@@ -2,34 +2,34 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-[#0b0f19]">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">Bridging Industrial Reliability with Cloud-Native Architecture</h2>
+        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">Bridging Operational Discipline with Kubernetes Governance</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#1a1f2e] p-6 rounded-lg border-l-4 border-[#ff9900]">
-            <h3 className="text-white font-bold mb-2">Agentic AI Infrastructure</h3>
-            <p className="text-[#aab7b8] text-sm">Design and deploy autonomous cloud ecosystems with decoupled governance to safely scale AI workloads.</p>
+          <div className="bg-[#1a1f2e] p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 className="text-white font-bold mb-2">Kubernetes Governance</h3>
+            <p className="text-[#aab7b8] text-sm">Deploying fail-closed control planes and OPA policy-as-code to enforce structural constraints directly at the API server.</p>
           </div>
           
-          <div className="bg-[#1a1f2e] p-6 rounded-lg border-l-4 border-[#ff9900]">
+          <div className="bg-[#1a1f2e] p-6 rounded-lg border-l-4 border-blue-500">
             <h3 className="text-white font-bold mb-2">Fiscal SecOps</h3>
-            <p className="text-[#aab7b8] text-sm">Implement proactive fiscal guardrails and atomic state operations to prevent AI token runaway.</p>
+            <p className="text-[#aab7b8] text-sm">Implementing real-time container-level telemetry and circuit breakers to permanently neutralize AI token runaway.</p>
           </div>
           
-          <div className="bg-[#1a1f2e] p-6 rounded-lg border-l-4 border-[#ff9900]">
+          <div className="bg-[#1a1f2e] p-6 rounded-lg border-l-4 border-blue-500">
             <h3 className="text-white font-bold mb-2">Multi-Cloud Resilience</h3>
-            <p className="text-[#aab7b8] text-sm">Architect zero-trust disaster recovery models that guarantee business continuity across AWS and GCP.</p>
+            <p className="text-[#aab7b8] text-sm">Building zero-trust, keyless active-passive topologies across GCP and AWS with keyless OIDC federation.</p>
           </div>
         </div>
 
         <div className="mt-10 space-y-4 text-[#aab7b8] leading-relaxed">
           <p>
-            My approach to platform engineering is fundamentally different from traditional software engineering. It is rooted in 17+ years of physical production operations and over 125 regulatory-grade incident investigations. I spent my early career managing safety-critical, high-pressure equipment where downtime wasn't just an inconvenience—it was a critical failure.
+            My engineering approach is driven by a simple operational reality: I build for environments where networks partition, upstream APIs degrade, and autonomous loops happen. This mindset is rooted in 17+ years of physical production operations and over 125 regulatory-grade incident investigations, where system uptime and deterministic safety contracts were non-negotiable.
           </p>
           <p>
-            Today, I bring that exact same industrial incident command discipline to distributed systems. I specialize in translating strict reliability requirements into robust, automated infrastructure. I don't just blueprint systems; I engineer the deterministic guardrails and 'fail-closed' policies that allow autonomous infrastructure to scale without human intervention.
+            Today, I translate that exact same incident command discipline to cloud-native platforms. Instead of relying on passive, post-billing alerts or static documentation, I focus on moving infrastructure governance directly into the Kubernetes control plane through mathematical, automated enforcement.
           </p>
           <p>
-            Whether I am decoupling business logic from governance to prevent AI "token runaway," or designing zero-trust multi-cloud failovers, my goal is to build systems that isolate blast radiuses, protect enterprise budgets, and fail safely.
+            Through my flagship work with the Serverless Agentic Governance Controller (SAGC), I've proven that isolating blast radiuses, securing cross-cloud workloads using ephemeral Workload Identity Federation, and enforcing strict resource budgets can be built seamlessly right into the delivery pipeline.
           </p>
         </div>
       </div>
